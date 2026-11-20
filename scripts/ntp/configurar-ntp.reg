@@ -1,0 +1,11 @@
+Windows Registry Editor Version 5.00
+
+; Solo cambia el registro. Despues hay que reiniciar el servicio:
+;   net stop w32time && net start w32time
+;   sc config w32time start= auto
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config]
+"AnnounceFlags"=dword:00000005
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpServer]
+"Enabled"=dword:00000001
